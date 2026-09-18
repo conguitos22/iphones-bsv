@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { @apply bg-white text-brand-navy antialiased; }
+
+::selection { background: #1E6BFF; color: white; }
+
+.container-page { @apply mx-auto max-w-7xl px-4; }
+
+.btn-cta {
+  @apply inline-flex items-center justify-center rounded-md bg-brand-cta text-white font-medium px-5 py-3 hover:bg-brand-ctaDark transition-colors;
+}
+.btn-outline {
+  @apply inline-flex items-center justify-center rounded-md border border-brand-navy text-brand-navy font-medium px-5 py-3 hover:bg-brand-navy hover:text-white transition-colors;
+}
+
+.input { @apply w-full border border-brand-line rounded-md px-3 py-2 text-sm font-normal outline-none focus:border-brand-blue; }
