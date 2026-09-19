@@ -26,4 +26,11 @@ export function createServerSupabase() {
 
 // Cliente admin (service_role) — SÓ em código de servidor (route handlers), nunca no navegador.
 // Usado para chamar register_payment / apply_payment_event, que exigem service_role.
-export
+export function createServiceSupabase() {
+  const { createClient } = require('@supabase/supabase-js');
+  return createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    { auth: { autoRefreshToken: false, persistSession: false } }
+  );
+}
